@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dmmbw5njm0ued"]
+
+[ext_resource type="Script" uid="uid://6oapklcn8g0b" path="res://Scripts/health_pickup.gd" id="1_18ac6"]
+[ext_resource type="Texture2D" uid="uid://bi3t1lbahtqsa" path="res://Assets/Images/item/IconHeart.png" id="1_gvws8"]
+[ext_resource type="AudioStream" uid="uid://cl8tmj4pw0b76" path="res://Assets/Audio/758966__camtheman28__coin-sfx.wav" id="4_v1ck8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84hs7"]
+size = Vector2(44, 38)
+
+[node name="Health Pickup" type="Area2D" unique_id=1675393697]
+script = ExtResource("1_18ac6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838324978]
+scale = Vector2(3, 3)
+texture = ExtResource("1_gvws8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=593024650]
+shape = SubResource("RectangleShape2D_84hs7")
+
+[node name="Collected" type="AudioStreamPlayer2D" parent="." unique_id=669004338]
+stream = ExtResource("4_v1ck8")
+pitch_scale = 1.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

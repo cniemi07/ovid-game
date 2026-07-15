@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cjqbnnpiosd6t"]
+
+[ext_resource type="Script" uid="uid://b1ohsrdxl5upw" path="res://Scripts/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://dpav3vqpfox3n" path="res://Assets/Images/UI/LifeBarMiniProgress.png" id="2_ycag2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84hs7"]
+size = Vector2(18, 4)
+
+[node name="Bullet" type="Area2D" unique_id=632243201]
+script = ExtResource("1_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=952310162]
+texture = ExtResource("2_ycag2")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1202796776]
+shape = SubResource("RectangleShape2D_84hs7")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1437187684]
+rect = Rect2(-202, -180, 404, 360)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
