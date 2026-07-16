@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nu86u0qpv8ff" path="res://Assets/Images/Enemies/Slime_Green.png" id="1_jokqx"]
 [ext_resource type="Script" uid="uid://brbbsbq1nv7y2" path="res://Scripts/slime.gd" id="1_swwnm"]
-[ext_resource type="AudioStream" uid="uid://cpkbmvecvcadn" path="res://Assets/Audio/353250__zuzek06__slimejump.wav" id="3_aiwxb"]
+[ext_resource type="AudioStream" uid="uid://cpkbmvecvcadn" path="res://Assets/Audio/slimejump.wav" id="3_aiwxb"]
 [ext_resource type="PackedScene" uid="uid://la44wkcnxe6" path="res://Scenes/health_bar.tscn" id="4_paq7w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swwnm"]
@@ -173,7 +173,7 @@ radius = 206.1965
 size = Vector2(38, 34)
 
 [node name="Slime" type="CharacterBody2D" unique_id=1436273849]
-collision_layer = 2
+collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_swwnm")
 

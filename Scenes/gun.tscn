@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b5cy8cl01mb7e" path="res://Assets/Images/item/weapons/handgun.png" id="1_nxj5y"]
 [ext_resource type="Script" uid="uid://l1a5g2r7u2o8" path="res://Scripts/gun.gd" id="1_oqrbh"]
+[ext_resource type="AudioStream" uid="uid://db68y8na7iukh" path="res://Assets/Audio/realistic_gunshot.wav" id="3_t6ynv"]
 
-[node name="Gun" type="Node2D" unique_id=1729841235]
+[node name="Pistol" type="Node2D" unique_id=1729841235]
 rotation = 6.2831855
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_oqrbh")
@@ -14,3 +15,7 @@ texture = ExtResource("1_nxj5y")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=632478779]
 position = Vector2(19.999998, -7.5000033)
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="." unique_id=2055143918]
+stream = ExtResource("3_t6ynv")
+pitch_scale = 1.23

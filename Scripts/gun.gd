@@ -2,6 +2,7 @@ extends Node2D
 
 const BULLET = preload("res://Scenes/bullet.tscn")
 @onready var muzzle: Marker2D = $Marker2D
+@onready var Gunshot: AudioStreamPlayer2D = $Gunshot
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = .4
 	if Input.is_action_just_pressed("Shoot"):
+		Gunshot.play()
 		var bullet_instance = BULLET.instantiate()
 		get_tree().root.add_child(bullet_instance)
 		bullet_instance.global_position =  muzzle.global_position

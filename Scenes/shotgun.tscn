@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://vg3b5kl4mrnt"]
+
+[ext_resource type="Script" uid="uid://bldj36pkxurpy" path="res://Scripts/shotgun.gd" id="1_u0ide"]
+[ext_resource type="Texture2D" uid="uid://ceypgj82mh14g" path="res://Assets/Images/item/weapons/shotgun1.png" id="2_8claw"]
+
+[node name="Shotgun" type="Node2D" unique_id=511554464]
+script = ExtResource("1_u0ide")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=350997906]
+position = Vector2(14, -1)
+scale = Vector2(0.984375, 0.96875)
+texture = ExtResource("2_8claw")
+
+[node name="muzzle" type="Marker2D" parent="." unique_id=1263778269]
+position = Vector2(21, -4)

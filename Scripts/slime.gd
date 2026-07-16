@@ -30,7 +30,7 @@ func _attack(delta: float)->void:
 	animated_sprite_2d.play("attack")
 	
 	
-func takeDamage(damage: int, attackerPosition: Vector2) -> void:
+func take_damage(damage: int, attackerPosition: Vector2) -> void:
 	health -= damage
 	health_bar.updateHealth(health)
 	if health <= 0:

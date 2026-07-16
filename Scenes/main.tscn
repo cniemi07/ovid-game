@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://o367cms14xj" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://nbgap47h41kh" path="res://Scenes/hud.tscn" id="2_bo1nx"]
-[ext_resource type="AudioStream" uid="uid://bci408dxv3fdt" path="res://Assets/Audio/766921__victor_natas__the-adventure.wav" id="3_8gbba"]
+[ext_resource type="AudioStream" uid="uid://bci408dxv3fdt" path="res://Assets/Audio/soundtrack.wav" id="3_8gbba"]
 
 [node name="Main" type="Node2D" unique_id=1346487494]
 script = ExtResource("1_bo1nx")

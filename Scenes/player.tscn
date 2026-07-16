@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bh3qs6vudqv78" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b8u81g1fhd52l" path="res://Assets/Images/Player/Player.png" id="1_v0iea"]
-[ext_resource type="AudioStream" uid="uid://cisdbtgtcrp0y" path="res://Assets/Audio/530448__mellau__whoosh-short-5.wav" id="3_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://crmeumwh44tqt" path="res://Assets/Audio/448226__inspectorj__explosion-8-bit-01.wav" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://cisdbtgtcrp0y" path="res://Assets/Audio/swing.wav" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://crmeumwh44tqt" path="res://Assets/Audio/explosion.wav" id="4_vgqql"]
 [ext_resource type="PackedScene" uid="uid://d1sbgwmjqxqm4" path="res://Scenes/gun.tscn" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]

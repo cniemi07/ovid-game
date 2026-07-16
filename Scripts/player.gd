@@ -83,8 +83,8 @@ func attack() ->  void:
 	
 	hitbox.monitoring = true
 	is_attacking = true
-	#swing.play()
-	#play_animation("attack", last_direction)
+	swing.play()
+	play_animation("attack", last_direction)
 
 
 
@@ -111,10 +111,10 @@ func update_hitbox_offset() -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if is_attacking  and body.name.begins_with("Slime") :
-		body.takeDamage(strength, position)
+		body.take_damage(strength, position)
 		
 signal health_changed(new_health: int)
-
+ 
 func heal(amount: int) -> void:
 	print("heal called, current health: ", health, " adding: ", amount)
 
