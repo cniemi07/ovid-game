@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b8u81g1fhd52l" path="res://Assets/Images/Player/Player.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://cisdbtgtcrp0y" path="res://Assets/Audio/swing.wav" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://crmeumwh44tqt" path="res://Assets/Audio/explosion.wav" id="4_vgqql"]
+[ext_resource type="Script" uid="uid://bahaf2fv05io0" path="res://Scripts/weapon_manager.gd" id="5_3smsa"]
 [ext_resource type="PackedScene" uid="uid://d1sbgwmjqxqm4" path="res://Scenes/gun.tscn" id="5_fkybt"]
+[ext_resource type="PackedScene" uid="uid://vg3b5kl4mrnt" path="res://Scenes/shotgun.tscn" id="7_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -429,7 +431,7 @@ size = Vector2(9.25, 9.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_84hs7"]
 radius = 12.2602
 
-[node name="Player" type="CharacterBody2D" unique_id=573259279]
+[node name="Player" type="CharacterBody2D" unique_id=573259279 groups=["Player"]]
 scale = Vector2(4, 4)
 script = ExtResource("1_cvnsp")
 
@@ -441,7 +443,7 @@ animation = &"death"
 position = Vector2(-0.125, 4.25)
 shape = SubResource("RectangleShape2D_84hs7")
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=1945890680]
+[node name="Hitbox" type="Area2D" parent="." unique_id=1945890680 groups=["Player"]]
 position = Vector2(4.75, 2.75)
 collision_mask = 2
 metadata/_edit_group_ = true
@@ -467,8 +469,20 @@ pitch_scale = 1.12
 wait_time = 0.5
 one_shot = true
 
-[node name="Gun" parent="." unique_id=1729841235 instance=ExtResource("5_fkybt")]
+[node name="WeaponManager" type="Node2D" parent="." unique_id=1490371936]
 position = Vector2(4, 3.2500002)
+scale = Vector2(0.4, 0.4)
+script = ExtResource("5_3smsa")
+
+[node name="Gun" parent="WeaponManager" unique_id=1729841235 instance=ExtResource("5_fkybt")]
+position = Vector2(0.6250001, 0.6249993)
+rotation = -1.4210856e-14
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Shotgun" parent="WeaponManager" unique_id=128548308 instance=ExtResource("7_8erm5")]
+position = Vector2(3.124999, -3.1250007)
+scale = Vector2(1.5, 1.5)
+kickback = 503.448
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

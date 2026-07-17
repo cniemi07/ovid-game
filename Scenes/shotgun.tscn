@@ -1,15 +1,19 @@
 [gd_scene format=3 uid="uid://vg3b5kl4mrnt"]
 
-[ext_resource type="Script" uid="uid://bldj36pkxurpy" path="res://Scripts/shotgun.gd" id="1_u0ide"]
+[ext_resource type="PackedScene" uid="uid://d1sbgwmjqxqm4" path="res://Scenes/gun.tscn" id="1_u0ide"]
 [ext_resource type="Texture2D" uid="uid://ceypgj82mh14g" path="res://Assets/Images/item/weapons/shotgun1.png" id="2_8claw"]
 
-[node name="Shotgun" type="Node2D" unique_id=511554464]
-script = ExtResource("1_u0ide")
+[node name="Shotgun" unique_id=1729841235 instance=ExtResource("1_u0ide")]
+bullet_count = 4
+arc = 25.0
+fire_rate = 1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=350997906]
-position = Vector2(14, -1)
-scale = Vector2(0.984375, 0.96875)
+[node name="Sprite2D" parent="." index="0" unique_id=1113242165]
+position = Vector2(12.499999, -2.3841858e-06)
 texture = ExtResource("2_8claw")
 
-[node name="muzzle" type="Marker2D" parent="." unique_id=1263778269]
-position = Vector2(21, -4)
+[node name="Marker2D" parent="." index="1" unique_id=632478779]
+position = Vector2(19.999998, -2.5000038)
+
+[node name="Gunshot" parent="." index="2" unique_id=2055143918]
+position = Vector2(17.499998, -2.5000029)

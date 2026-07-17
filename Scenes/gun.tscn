@@ -2,12 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b5cy8cl01mb7e" path="res://Assets/Images/item/weapons/handgun.png" id="1_nxj5y"]
 [ext_resource type="Script" uid="uid://l1a5g2r7u2o8" path="res://Scripts/gun.gd" id="1_oqrbh"]
+[ext_resource type="PackedScene" uid="uid://cjqbnnpiosd6t" path="res://Scenes/bullet.tscn" id="2_k4teu"]
 [ext_resource type="AudioStream" uid="uid://db68y8na7iukh" path="res://Assets/Audio/realistic_gunshot.wav" id="3_t6ynv"]
 
 [node name="Pistol" type="Node2D" unique_id=1729841235]
 rotation = 6.2831855
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_oqrbh")
+bullet = ExtResource("2_k4teu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1113242165]
 position = Vector2(8, -6)

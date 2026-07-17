@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dcly15qe0xh0b"]
+
+[ext_resource type="Script" uid="uid://chovn27dp1rr0" path="res://Scripts/east_door.gd" id="1_qsc3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84hs7"]
+size = Vector2(68, 254)
+
+[node name="East_Door" type="Area2D" unique_id=2088996753]
+script = ExtResource("1_qsc3j")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=987419391]
+shape = SubResource("RectangleShape2D_84hs7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

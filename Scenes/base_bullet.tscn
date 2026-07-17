@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dks3mxxixg4gl"]
+
+[ext_resource type="Script" uid="uid://bweue8p4265sh" path="res://Scripts/base_bullet.gd" id="1_gq5uc"]
+[ext_resource type="Texture2D" uid="uid://dj45sjneovmw4" path="res://Assets/Images/item/projectiles/bullet_1.png" id="1_w2qld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84hs7"]
+size = Vector2(10, 8)
+
+[node name="Base Bullet" type="Node2D" unique_id=1291081995]
+script = ExtResource("1_gq5uc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1587475022]
+texture = ExtResource("1_w2qld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1177330656]
+shape = SubResource("RectangleShape2D_84hs7")

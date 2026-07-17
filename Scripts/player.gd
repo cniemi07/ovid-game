@@ -16,6 +16,8 @@ var last_direction: Vector2 = Vector2.RIGHT
 @onready var damaged: AudioStreamPlayer2D = $Damaged
 @onready var invincibility_frame: Timer = $invincibilityFrame
 
+
+var kickback_velocity: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	#load health from singleton
 	health = PlayerStats.health
@@ -24,7 +26,11 @@ func _ready() -> void:
 	hitbox_offset = hitbox.position
 	
 	
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	#print("raw: ", Input.is_key_pressed(KEY_A), " ", Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT))
+	#print(Input.get_vector("left", "right", "up", "down"), " ",
+	Input.is_action_pressed("Shoot")
+	#print("alive: ", alive, " attacking: ", is_attacking)
 	#disable hitbox  until attack
 	hitbox.monitoring = false
 	if alive:
@@ -35,9 +41,7 @@ func _physics_process(_delta: float) -> void:
 			velocity = Vector2.ZERO
 			return
 		
-			
-			
-				
+		kickback_velocity = kickback_velocity.move_toward(Vector2.ZERO, 800 * delta)
 		process_movement()
 		process_animation()
 		move_and_slide()	
@@ -45,20 +49,21 @@ func _physics_process(_delta: float) -> void:
 #----------------------------------
 # 		MOVEMENT & ANIMATION
 #----------------------------------
-
+func apply_kickback(kick: Vector2):
+	kickback_velocity = kick
 
 func process_movement() -> void:
-			
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction != Vector2.ZERO:
-		velocity = direction * SPEED
+		velocity = direction * SPEED + kickback_velocity
 		last_direction = direction
 		update_hitbox_offset()
 	else:
-		velocity = Vector2.ZERO
-	
+		velocity = direction*SPEED + kickback_velocity
+		#velocity = Vector2.ZERO
 func process_animation()-> void:
 	if is_attacking:
 		return
@@ -116,7 +121,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 signal health_changed(new_health: int)
  
 func heal(amount: int) -> void:
-	print("heal called, current health: ", health, " adding: ", amount)
+	#print("heal called, current health: ", health, " adding: ", amount)
 
 	health += amount
 	if health >= max_health:
